@@ -22,55 +22,124 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">PasswordkeepR</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Link</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
         </li>
       </ul>
-      <button class="btn btn-outline-success mr-sm-2 my-2 my-sm-0" type="submit">Search</button>
+      <div class="inline my-2 my-lg-0">
+        Company Name & Profile
+      </div>
     </div>
-  </nav>
-
-  <nav>
-    <div>passwordkeepr</div>
-    <div>company name</div>
-    <div>drop down menu</div>
   </nav>
 
   <main>
 
     <section>
-      <header>
-        <div>website name</div>
-        <div>category</div>
-      </header>
+      <div class="card" style="width: 75%;">
+        <div class="card-body">
+          <h5 class="card-title">Website Name</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Category</h6>
 
-      <div>
-        <p>username</p>
-        <button>copy</button>
+          <div class="username-field">
+            <form>
+              <div class="form-group row">
+                <label for="staticEmail" class="col-lg col-form-label"></label>
+                <div class="col-sm-10">
+                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="username">
+                  <button type="button" class="btn btn-primary">Copy</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="username-field">
+            <form>
+              <div class="form-group row">
+                <label for="staticEmail" class="col-lg col-form-label"></label>
+                <div class="col-sm-10">
+                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="password">
+                  <button type="button" class="btn btn-primary">Copy</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <footer class="card-footer">
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              Edit
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <button type="button" class="btn btn-primary">Delete</button>
+          </footer>
+        </div>
       </div>
+    </section>
 
-      <div>
-        <p>password</p>
-        <button>copy</button>
-      </div>
 
-      <div>
-        <button>edit</button>
-        <button>delete</button>
+    <section>
+      <div class="card" style="width: 75%;">
+        <div class="card-body">
+          <h5 class="card-title">Website Name</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Category</h6>
+          <div class="username-field">
+            <p class="card-text">Username</p>
+            <button type="button" class="btn btn-primary">Copy</button>
+          </div>
+          <div class="username-field">
+            <p class="card-text">Password</p>
+            <button type="button" class="btn btn-primary">Copy</button>
+          </div>
+          <footer class="card-footer">
+            <button type="button" class="btn btn-primary">Edit</button>
+            <button type="button" class="btn btn-primary">Delete</button>
+          </footer>
+        </div>
       </div>
     </section>
 
