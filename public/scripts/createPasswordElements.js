@@ -11,13 +11,13 @@ const createPasswordElement = function(password) {
     <div class="form-group row">
       <div class="col-lg-6 d-flex pt-2">
         <input type="text" readonly class="form-control-plaintext" value="${password.username}">
-        <button type="button" class="btn btn-outline-primary d-flex align-items-center"><i class="fa-solid fa-copy mr-2"></i> Copy</button>
+        <button type="button" class="button-copy btn btn-outline-primary d-flex align-items-center"><i class="fa-solid fa-copy mr-2"></i> Copy</button>
       </div>
     </div>
     <div class="form-group row">
       <div class="col-lg-6 d-flex">
         <input type="text" readonly class="form-control-plaintext" value="${password.password}">
-        <button type="button" class="btn btn-outline-primary d-flex align-items-center"><i class="fa-solid fa-copy mr-2"></i> Copy</button>
+        <button type="button" class="button-copy btn btn-outline-primary d-flex align-items-center"><i class="fa-solid fa-copy mr-2"></i> Copy</button>
       </div>
     </div>
     <div class="d-flex justify-content-between">
