@@ -51,10 +51,9 @@
       </ul>
     </div>
   </nav>
-
-  <main class="d-flex container justify-content-center align-items-center flex-column mt-2">
+  <main class="d-flex container justify-content-center align-items-center flex-column mb-2">
   <!-- user password cards -->
-      <article class="card p-1 shadow-lg rounded mb-3 col-lg-8">
+    <article class="card p-1 shadow-lg rounded mb-5 mt-3 col-lg-8">
         <div class="card-body">
           <div class="d-flex align-items-center">
             <h5 class="card-title">Website Name</h5>
@@ -77,8 +76,8 @@
             <button type="button" class="btn btn-outline-danger col-lg-2 col-sm-6"><i class="fa-solid fa-trash"></i> Delete</button>
           </div>
         </div>
-      </article>
-      <article class="card p-1 shadow-lg rounded mb-3 col-lg-8">
+    </article>
+    <article class="card p-1 shadow-lg rounded mb-5 col-lg-8">
         <div class="card-body">
           <div class="d-flex align-items-center">
             <h5 class="card-title">Website Name</h5>
@@ -101,19 +100,20 @@
             <button type="button" class="btn btn-outline-danger col-lg-2 col-sm-6"><i class="fa-solid fa-trash"></i> Delete</button>
           </div>
         </div>
-      </article>
+    </article>
   </main>
+
   <!-- create password button -->
   <div class="d-flex fixed-bottom justify-content-end mr-5 mb-5 dropdown">
     <button type="button" class="btn btn-primary btn-circle btn-lg" data-toggle="modal" data-target=".bd-create-password-modal-lg"><i class="fa-solid fa-plus"></i>
     </button>
   </div>
+
   <!--create password modal -->
   <div class="modal fade bd-create-password-modal-lg pt-3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <form class="p-3 mt-2">
-          <h4>Create New Password</h4>
+    <div class="modal-dialog modal-lg modal-content">
+      <form class="p-3 mt-2">
+          <h4 class="ml-3 mb-4">Create New Password</h4>
           <div class="d-flex form-group col-lg-6">
             <input type="website" class="form-control" id="exampleInputWebsite" aria-describedby="websiteHelp" placeholder="Website">
             <div class="btn-group ml-5">
@@ -154,19 +154,17 @@
               <input type="checkbox" class="form-check-input" id="exampleCheck4">
               <label class="form-check-label" for="exampleCheck4">Symbols</label>
             </div>
-
           </div>
           <div class="d-flex justify-content-end">
             <button type="submit" class="btn btn-primary mt-4 col-lg-12">Add Password</button>
           </div>
-        </form>
-      </div>
+      </form>
     </div>
   </div>
+
   <!-- edit password modal -->
   <div class="modal fade bd-edit-modal-lg pt-3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
+    <div class="modal-dialog modal-lg modal-content">
         <form class="p-3 mt-2">
           <h4>Edit Password</h4>
           <div class="d-flex form-group col-lg-6">
@@ -214,7 +212,6 @@
             <button type="submit" class="btn btn-outline-success mt-4 col-lg-12">Save Password</button>
           </div>
         </form>
-      </div>
     </div>
   </div>
 </body>
