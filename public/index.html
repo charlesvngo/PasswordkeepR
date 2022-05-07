@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,17 +14,18 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/main.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
+    <link rel="stylesheet" href="/styles/buttons.css" type="text/css" />
+    <!-- JS -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js" defer></script>
     <script type="text/javascript" src="/scripts/app.js" defer></script>
 
     <title>Home Page</title>
   </head>
-
 <body>
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top mb-5 p-3">
@@ -52,9 +52,8 @@
     </div>
   </nav>
 
-  <main>
-    <!-- card -->
-    <section class="d-flex container justify-content-center align-items-center flex-column mt-2">
+  <main class="d-flex container justify-content-center align-items-center flex-column mt-2">
+  <!-- user password cards -->
       <article class="card p-1 shadow-lg rounded mb-3 col-lg-8">
         <div class="card-body">
           <div class="d-flex align-items-center">
@@ -73,14 +72,150 @@
               <button type="button" class="btn btn-outline-primary d-flex align-items-center"><i class="fa-solid fa-copy mr-2"></i> Copy</button>
             </div>
           </div>
-          <div class="d-flex justify-content-end">
-            <button type="button" class="btn btn-outline-danger col-lg-2 col-sm-12"><i class="fa-solid fa-trash"></i> Delete</button>
+          <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-outline-dark col-lg-2 col-sm-6 mr-1" data-toggle="modal" data-target=".bd-edit-modal-lg"> Edit</button>
+            <button type="button" class="btn btn-outline-danger col-lg-2 col-sm-6"><i class="fa-solid fa-trash"></i> Delete</button>
           </div>
         </div>
       </article>
-    </section>
+      <article class="card p-1 shadow-lg rounded mb-3 col-lg-8">
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <h5 class="card-title">Website Name</h5>
+            <h6 class="card-subtitle text-muted ml-3 pb-1">Category</h6>
+          </div>
+          <div class="form-group row">
+            <div class="col-lg-6 d-flex pt-2">
+              <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="username">
+              <button type="button" class="btn btn-outline-primary d-flex align-items-center"><i class="fa-solid fa-copy mr-2"></i> Copy</button>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-lg-6 d-flex">
+              <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="password">
+              <button type="button" class="btn btn-outline-primary d-flex align-items-center"><i class="fa-solid fa-copy mr-2"></i> Copy</button>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-outline-dark col-lg-2 col-sm-6 mr-1" data-toggle="modal" data-target=".bd-edit-modal-lg"> Edit</button>
+            <button type="button" class="btn btn-outline-danger col-lg-2 col-sm-6"><i class="fa-solid fa-trash"></i> Delete</button>
+          </div>
+        </div>
+      </article>
   </main>
+  <!-- create password button -->
+  <div class="d-flex fixed-bottom justify-content-end mr-5 mb-5 dropdown">
+    <button type="button" class="btn btn-primary btn-circle btn-lg" data-toggle="modal" data-target=".bd-create-password-modal-lg"><i class="fa-solid fa-plus"></i>
+    </button>
+  </div>
+  <!--create password modal -->
+  <div class="modal fade bd-create-password-modal-lg pt-3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form class="p-3 mt-2">
+          <h4>Create New Password</h4>
+          <div class="d-flex form-group col-lg-6">
+            <input type="website" class="form-control" id="exampleInputWebsite" aria-describedby="websiteHelp" placeholder="Website">
+            <div class="btn-group ml-5">
+              <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categories
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Email</a>
+                <a class="dropdown-item" href="#">Entertainment</a>
+                <a class="dropdown-item" href="#">Finance</a>
+                <a class="dropdown-item" href="#">Social</a>
+                <a class="dropdown-item" href="#">Productivity</a>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-lg-6">
+            <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Username">
+          </div>
+          <div class="form-group col-lg-6">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="d-flex align-items-center mt-3">
+            <span class="input-group-sm ml-3 mr-1">Length</span>
+            <input type="number" class="pl-2">
+            <div class="form-check ml-3">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Lowercase</label>
+            </div>
+            <div class="form-check ml-3">
+              <input type="checkbox" class="form-check-input" id="exampleCheck2">
+              <label class="form-check-label" for="exampleCheck2">Uppercase</label>
+            </div>
+            <div class="form-check ml-3">
+              <input type="checkbox" class="form-check-input" id="exampleCheck3">
+              <label class="form-check-label" for="exampleCheck3">Numbers</label>
+            </div>
+            <div class="form-check ml-3">
+              <input type="checkbox" class="form-check-input" id="exampleCheck4">
+              <label class="form-check-label" for="exampleCheck4">Symbols</label>
+            </div>
 
+          </div>
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary mt-4 col-lg-12">Add Password</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- edit password modal -->
+  <div class="modal fade bd-edit-modal-lg pt-3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form class="p-3 mt-2">
+          <h4>Edit Password</h4>
+          <div class="d-flex form-group col-lg-6">
+            <input type="website" class="form-control" id="exampleInputWebsite" aria-describedby="websiteHelp" placeholder="Website">
+            <div class="btn-group ml-5">
+              <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categories
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Email</a>
+                <a class="dropdown-item" href="#">Entertainment</a>
+                <a class="dropdown-item" href="#">Finance</a>
+                <a class="dropdown-item" href="#">Social</a>
+                <a class="dropdown-item" href="#">Productivity</a>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-lg-6">
+            <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Username">
+          </div>
+          <div class="form-group col-lg-6">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="d-flex align-items-center mt-3">
+            <span class="input-group-sm ml-3 mr-1">Length</span>
+            <input type="number" class="pl-2">
+            <div class="form-check ml-3">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Lowercase</label>
+            </div>
+            <div class="form-check ml-3">
+              <input type="checkbox" class="form-check-input" id="exampleCheck2">
+              <label class="form-check-label" for="exampleCheck2">Uppercase</label>
+            </div>
+            <div class="form-check ml-3">
+              <input type="checkbox" class="form-check-input" id="exampleCheck3">
+              <label class="form-check-label" for="exampleCheck3">Numbers</label>
+            </div>
+            <div class="form-check ml-3">
+              <input type="checkbox" class="form-check-input" id="exampleCheck4">
+              <label class="form-check-label" for="exampleCheck4">Symbols</label>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-outline-success mt-4 col-lg-12">Save Password</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
-
 </html>
