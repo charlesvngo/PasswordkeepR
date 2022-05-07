@@ -19,10 +19,10 @@
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/main.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/buttons.css" type="text/css" />
     <!-- JS -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js" defer></script>
     <script type="text/javascript" src="/scripts/app.js" defer></script>
+    <script type="text/javascript" src="/scripts/createPasswordElements.js" defer></script>
 
     <title>Home Page</title>
   </head>
@@ -61,13 +61,13 @@
           </div>
           <div class="form-group row">
             <div class="col-lg-6 d-flex pt-2">
-              <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="username">
+              <input type="text" readonly class="form-control-plaintext" value="username">
               <button type="button" class="btn btn-outline-primary d-flex align-items-center"><i class="fa-solid fa-copy mr-2"></i> Copy</button>
             </div>
           </div>
           <div class="form-group row">
             <div class="col-lg-6 d-flex">
-              <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="password">
+              <input type="text" readonly class="form-control-plaintext" value="password">
               <button type="button" class="btn btn-outline-primary d-flex align-items-center"><i class="fa-solid fa-copy mr-2"></i> Copy</button>
             </div>
           </div>
@@ -85,13 +85,13 @@
           </div>
           <div class="form-group row">
             <div class="col-lg-6 d-flex pt-2">
-              <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="username">
+              <input type="text" readonly class="form-control-plaintext" value="username">
               <button type="button" class="btn btn-outline-primary d-flex align-items-center"><i class="fa-solid fa-copy mr-2"></i> Copy</button>
             </div>
           </div>
           <div class="form-group row">
             <div class="col-lg-6 d-flex">
-              <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="password">
+              <input type="text" readonly class="form-control-plaintext" value="password">
               <button type="button" class="btn btn-outline-primary d-flex align-items-center"><i class="fa-solid fa-copy mr-2"></i> Copy</button>
             </div>
           </div>
@@ -115,7 +115,7 @@
       <form class="p-3 mt-2">
           <h4 class="ml-3 mb-4">Create New Password</h4>
           <div class="d-flex form-group col-lg-6">
-            <input type="website" class="form-control" id="exampleInputWebsite" aria-describedby="websiteHelp" placeholder="Website">
+            <input type="website" class="form-control" aria-describedby="websiteHelp" placeholder="Website">
             <div class="btn-group ml-5">
               <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Categories
@@ -133,25 +133,25 @@
             <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Username">
           </div>
           <div class="form-group col-lg-6">
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input type="password" class="form-control" placeholder="Password">
           </div>
           <div class="d-flex align-items-center mt-3">
             <span class="input-group-sm ml-3 mr-1">Length</span>
             <input type="number" class="pl-2" min="3" default="3">
             <div class="form-check ml-3">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <input type="checkbox" class="form-check-input">
               <label class="form-check-label" for="exampleCheck1">Lowercase</label>
             </div>
             <div class="form-check ml-3">
-              <input type="checkbox" class="form-check-input" id="exampleCheck2">
+              <input type="checkbox" class="form-check-input">
               <label class="form-check-label" for="exampleCheck2">Uppercase</label>
             </div>
             <div class="form-check ml-3">
-              <input type="checkbox" class="form-check-input" id="exampleCheck3">
+              <input type="checkbox" class="form-check-input">
               <label class="form-check-label" for="exampleCheck3">Numbers</label>
             </div>
             <div class="form-check ml-3">
-              <input type="checkbox" class="form-check-input" id="exampleCheck4">
+              <input type="checkbox" class="form-check-input">
               <label class="form-check-label" for="exampleCheck4">Symbols</label>
             </div>
           </div>
@@ -183,28 +183,28 @@
             </div>
           </div>
           <div class="form-group col-lg-6">
-            <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Username">
+            <input type="username" class="form-control" placeholder="Username">
           </div>
           <div class="form-group col-lg-6">
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input type="password" class="form-control" placeholder="Password">
           </div>
           <div class="d-flex align-items-center mt-3">
             <span class="input-group-sm ml-3 mr-1">Length</span>
             <input type="number" class="pl-2">
             <div class="form-check ml-3">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <input type="checkbox" class="form-check-input">
               <label class="form-check-label" for="exampleCheck1">Lowercase</label>
             </div>
             <div class="form-check ml-3">
-              <input type="checkbox" class="form-check-input" id="exampleCheck2">
+              <input type="checkbox" class="form-check-input">
               <label class="form-check-label" for="exampleCheck2">Uppercase</label>
             </div>
             <div class="form-check ml-3">
-              <input type="checkbox" class="form-check-input" id="exampleCheck3">
+              <input type="checkbox" class="form-check-input">
               <label class="form-check-label" for="exampleCheck3">Numbers</label>
             </div>
             <div class="form-check ml-3">
-              <input type="checkbox" class="form-check-input" id="exampleCheck4">
+              <input type="checkbox" class="form-check-input">
               <label class="form-check-label" for="exampleCheck4">Symbols</label>
             </div>
           </div>
