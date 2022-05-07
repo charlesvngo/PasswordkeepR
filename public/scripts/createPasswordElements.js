@@ -20,6 +20,7 @@ const createPasswordElement = function(password) {
         <button type="button" class="button-copy btn btn-outline-primary d-flex align-items-center"><i class="fa-solid fa-copy mr-2"></i> Copy</button>
       </div>
     </div>
+    <button type="button" class="button-generate-password btn btn-outline-primary d-flex align-items-center">Generate Password</button>
     <div class="d-flex justify-content-between">
       <button type="button" class="btn btn-outline-dark col-lg-2 col-sm-6 mr-1" data-toggle="modal" data-target=".bd-edit-modal-lg"> Edit</button>
       <button type="button" class="btn btn-outline-danger col-lg-2 col-sm-6"><i class="fa-solid fa-trash"></i> Delete</button>
