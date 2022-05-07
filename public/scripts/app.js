@@ -24,7 +24,7 @@ const generatePassword = (length, lowerCase, upperCase, num, symbol) => {
   }
 
   if (symbol) {
-    characters += "!@3$$%^&*()_+";
+    characters += "!@#$$%^&*()_+";
   }
 
   // loop through the key based on the length provided, and add random values from the key
@@ -41,13 +41,14 @@ $(() => {
     .then((response) => renderPasswordElement(response))
     .then((response) => {
       // After the initial load, add the copy to clipboard handler to all cards.
-      $(".button-copy").click(function(event) {
+      $(".button-copy").click(function() {
         const copyField = $(this).prev().val();
         $(this).prev().val(copyField).select();
         document.execCommand("copy");
       });
 
-      $(".button-generate-password").click(function(event) {
+      // Attach password generation click handler
+      $(".button-generate-password").click(function() {
         // Obtain the selected length.
         const $length = $(this).next().find("input");
         const length = $length.val();
@@ -72,5 +73,25 @@ $(() => {
         $inputField.val(generatePassword(length, lowerCase, upperCase, num, symbol));
       });
 
+      // Attach handler to add-password button. Handler performs a post request
+      $(".create-password-form").submit(function(event) {
+        event.preventDefault();
+        const $inputArray = $(":input", this);
+        const $website = $inputArray[0];
+        const $category = $inputArray[1];
+        const $username = $inputArray[2];
+        const $password = $inputArray[3];
+
+        const website = $(website).val();
+        const category = $($category).val();
+        const username = $($username).val();
+        const password = $($password).val();
+
+        console.log("website:", $($website).val());
+        console.log("category:", $($category).val());
+        console.log("username:", $($username).val());
+        console.log("password:", $($password).val());
+
+      });
     });
 });
