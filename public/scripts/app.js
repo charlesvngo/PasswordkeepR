@@ -52,9 +52,6 @@ $(() => {
         const username = $($username).val();
         const password = $($password).val();
 
-        // Change the hardcoded org later
-        const organization_id = 1;
-
         const data = {website, category, username, password};
 
         $.post("/api/passwords/", data)
@@ -83,6 +80,7 @@ $(() => {
         $.get(`/api/passwords/${id}`)
           .then((result) =>{
             const passwordObj = result.passwords[0];
+            const id = passwordObj.id
             const category = passwordObj.category;
             const username = passwordObj.username;
             const password = passwordObj.password;
@@ -91,11 +89,38 @@ $(() => {
             $modal = $(this).closest("body").find(".edit-password-modal")
 
             $modal.find("input").first().val(website);
-            $modal.find("input").filter(".username").val(username)
-            $modal.find("input").filter(".password").val(password)
+            $modal.find("input").filter(".username").val(username);
+            $modal.find("input").filter(".password").val(password);
+            $modal.find("input").filter(".password-id").val(id);
             $modal.find(":selected").text(category);
+
           })
+      });
+
+      $(".save-password-button").submit(function(event){
+        event.preventDefault();
+        const $inputArray = $(":input", this);
+        console.log($inputArray);
+        const $website = $inputArray[0];
+        const $category = $inputArray[1];
+        const $username = $inputArray[2];
+        const $password = $inputArray[3];
+
+        const website = $($website).val();
+        const category = $($category).val();
+        const username = $($username).val();
+        const password = $($password).val();
+
+        const data = {website, category, username, password};
+
+        // $.post("/api/passwords/", data)
+        //   .then((response) => {
+        //     $(".create-password-modal").modal('hide');
+        //     renderPasswordElement(response);
+        //   });
+
 
       });
+
     });
 });
