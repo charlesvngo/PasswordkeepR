@@ -72,8 +72,7 @@ $(() => {
 
         $.post("/api/passwords/delete", data)
           .then((response) => {
-            $(".create-password-modal").modal('hide');
-            renderPasswordElement(response);
+            $(this).closest("article").remove();
           });
       });
 
