@@ -76,7 +76,7 @@ $(() => {
           });
       });
 
-      // Attach handler for edit button.
+      // Attach handler for edit button. Auto fill information in edit field.
       $(".password-edit-button").click(function(event) {
         const $id = $(this).parent().next();
         const id = $id.val();
@@ -84,19 +84,18 @@ $(() => {
           .then((result) =>{
             const passwordObj = result.passwords[0];
             const category = passwordObj.category;
-            const id = passwordObj.id;
-            const organization_id = passwordObj.organization_id;
             const username = passwordObj.username;
             const password = passwordObj.password;
             const website = passwordObj.website_url;
 
             $modal = $(this).closest("body").find(".edit-password-modal")
-            console.log($modal);
-            console.log($modal.find("input"))
+
+            $modal.find("input").first().val(website);
+            $modal.find("input").filter(".username").val(username)
+            $modal.find("input").filter(".password").val(password)
+            $modal.find(":selected").text(category);
           })
 
       });
-
-
     });
 });
