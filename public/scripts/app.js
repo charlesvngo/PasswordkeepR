@@ -82,15 +82,18 @@ $(() => {
         const $username = $inputArray[2];
         const $password = $inputArray[3];
 
-        const website = $(website).val();
+        const website = $($website).val();
         const category = $($category).val();
         const username = $($username).val();
         const password = $($password).val();
 
-        console.log("website:", $($website).val());
-        console.log("category:", $($category).val());
-        console.log("username:", $($username).val());
-        console.log("password:", $($password).val());
+        // Change the hardcoded org later
+        const organization_id = 1;
+
+        const data = {website, category, username, password};
+
+        $.post("/api/passwords/",data)
+          .then(() => {});
 
       });
     });

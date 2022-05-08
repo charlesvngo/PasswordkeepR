@@ -16,9 +16,17 @@ module.exports = (db) => {
   });
 
   router.post("/", (req, res) => {
-    console.log(req.body);
+    const website = req.body.website;
+    const category = req.body.category;
+    const username = req.body.username;
+    const password = req.body.password;
 
-    db.query(`SELECT * FROM passwords;`)
+    // Need to grab organization_id from cookie
+    const organization_id = 1;
+
+    db.query(`
+      INSERT INTO passwords (organization_id, website_url, category, username, password)
+      VALUES ($1, $2, $3, $4, $5)`, [organization_id, website, category, username, password])
       .then(data => {
         const passwords = data.rows;
         res.json({ passwords });
