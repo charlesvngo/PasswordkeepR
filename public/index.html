@@ -118,17 +118,18 @@
           <h4 class="ml-3 mb-4">Create New Password</h4>
           <div class="d-flex form-group col-lg-6">
             <input type="website" class="form-control" aria-describedby="websiteHelp" placeholder="Website">
-            <div class="btn-group ml-5">
-              <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Categories
-              </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Email</a>
-                <a class="dropdown-item" href="#">Entertainment</a>
-                <a class="dropdown-item" href="#">Finance</a>
-                <a class="dropdown-item" href="#">Social</a>
-                <a class="dropdown-item" href="#">Productivity</a>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Category</label>
               </div>
+              <select class="custom-select" id="inputGroupSelect01">
+                <option selected></option>
+                <option value="Email">Email</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Finance">Finance</option>
+                <option value="Social">Social</option>
+                <option value="Productivity">Productivity</option>
+              </select>
             </div>
           </div>
           <div class="form-group col-lg-6">
@@ -137,7 +138,7 @@
           <div class="form-group col-lg-6">
             <input type="text" class="form-control" placeholder="Password">
           </div>
-          <button type="button" class="button-generate-password btn btn-outline-primary d-flex align-items-center">Generate Password</button>
+          <button type="button" class="button-generate-password btn btn-dark d-flex align-items-center ml-3">Generate Password</button>
           <div class="d-flex align-items-center mt-3">
             <span class="input-group-sm ml-3 mr-1">Length</span>
             <input type="number" class="pl-2" min="3" default="3">
@@ -166,23 +167,24 @@
   </div>
 
   <!-- edit password modal -->
-  <div class="modal fade bd-edit-modal-lg pt-3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="edit-password-modal modal fade bd-edit-modal-lg pt-3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-content">
         <form class="p-3 mt-2">
           <h4 class="ml-3 mb-4">Edit Password</h4>
           <div class="d-flex form-group col-lg-6">
             <input type="website" class="form-control" id="exampleInputWebsite" aria-describedby="websiteHelp" placeholder="Website">
-            <div class="btn-group ml-5">
-              <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Categories
-              </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Email</a>
-                <a class="dropdown-item" href="#">Entertainment</a>
-                <a class="dropdown-item" href="#">Finance</a>
-                <a class="dropdown-item" href="#">Social</a>
-                <a class="dropdown-item" href="#">Productivity</a>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Category</label>
               </div>
+              <select class="custom-select" id="inputGroupSelect01">
+                <option selected></option>
+                <option value="Email">Email</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Finance">Finance</option>
+                <option value="Social">Social</option>
+                <option value="Productivity">Productivity</option>
+              </select>
             </div>
           </div>
           <div class="form-group col-lg-6">
@@ -191,7 +193,7 @@
           <div class="form-group col-lg-6">
             <input type="text" class="form-control" placeholder="Password">
           </div>
-          <button type="button" class="button-generate-password btn btn-outline-primary d-flex align-items-center">Generate Password</button>
+          <button type="button" class="button-generate-password btn btn-dark d-flex align-items-center ml-3">Generate Password</button>
           <div class="d-flex align-items-center mt-3">
             <span class="input-group-sm ml-3 mr-1">Length</span>
             <input type="number" class="pl-2">
