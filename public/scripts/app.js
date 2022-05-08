@@ -94,7 +94,6 @@ $(() => {
 
         $.post("/api/passwords/", data)
           .then((response) => {
-            $.noConflict();
             $(".create-password-modal").modal('hide');
             renderPasswordElement(response);
           });
