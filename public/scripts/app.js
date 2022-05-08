@@ -92,9 +92,12 @@ $(() => {
 
         const data = {website, category, username, password};
 
-        $.post("/api/passwords/",data)
-          .then(() => {});
-
+        $.post("/api/passwords/", data)
+          .then((response) => {
+            $.noConflict();
+            $(".create-password-modal").modal('hide');
+            renderPasswordElement(response);
+          });
       });
     });
 });

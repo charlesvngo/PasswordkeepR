@@ -26,7 +26,10 @@ module.exports = (db) => {
 
     db.query(`
       INSERT INTO passwords (organization_id, website_url, category, username, password)
-      VALUES ($1, $2, $3, $4, $5)`, [organization_id, website, category, username, password])
+      VALUES ($1, $2, $3, $4, $5)
+      RETURNING *;
+      `
+      , [organization_id, website, category, username, password])
       .then(data => {
         const passwords = data.rows;
         res.json({ passwords });
