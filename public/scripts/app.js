@@ -64,7 +64,7 @@ $(() => {
           });
       });
 
-      // Attach handler to add-password button. Handler performs a post request
+      // Attach handler delete button. Handler performs a post request which deletes
       $(".password-delete-button").click(function(event) {
         const $id = $(this).parent().next();
         const id = $id.val();
@@ -75,6 +75,28 @@ $(() => {
             $(this).closest("article").remove();
           });
       });
+
+      // Attach handler for edit button.
+      $(".password-edit-button").click(function(event) {
+        const $id = $(this).parent().next();
+        const id = $id.val();
+        $.get(`/api/passwords/${id}`)
+          .then((result) =>{
+            const passwordObj = result.passwords[0];
+            const category = passwordObj.category;
+            const id = passwordObj.id;
+            const organization_id = passwordObj.organization_id;
+            const username = passwordObj.username;
+            const password = passwordObj.password;
+            const website = passwordObj.website_url;
+
+            $modal = $(this).closest("body").find(".edit-password-modal")
+            console.log($modal);
+            console.log($modal.find("input"))
+          })
+
+      });
+
 
     });
 });

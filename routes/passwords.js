@@ -17,6 +17,21 @@ module.exports = (db) => {
       });
   });
 
+  router.get("/:id", (req, res) => {
+    const id = req.params.id;
+    const organization_id = req.cookies.user_id;
+    db.query(`SELECT * FROM passwords WHERE organization_id=$1 AND id=$2;`, [organization_id, id])
+      .then(data => {
+        const passwords = data.rows;
+        res.json({ passwords });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
   router.post("/", (req, res) => {
     const website = req.body.website;
     const category = req.body.category;
