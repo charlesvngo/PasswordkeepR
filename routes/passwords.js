@@ -22,9 +22,7 @@ module.exports = (db) => {
     const category = req.body.category;
     const username = req.body.username;
     const password = req.body.password;
-
-    // Need to grab organization_id from cookie
-    const organization_id = 1;
+    const organization_id = req.cookies.user_id;
 
     db.query(`
       INSERT INTO passwords (organization_id, website_url, category, username, password)
@@ -46,7 +44,7 @@ module.exports = (db) => {
   router.post("/delete", (req, res) => {
 
     // Need to grab organization_id from cookie
-    const organization_id = 1;
+    const organization_id = req.cookies.user_id;
 
     db.query(`
       DELETE FROM passwords WHERE id=$1
