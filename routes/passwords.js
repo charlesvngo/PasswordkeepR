@@ -1,9 +1,11 @@
 const express = require('express');
+const { cookie } = require('request');
 const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM passwords;`)
+    const organization_id = req.cookies.user_id;
+    db.query(`SELECT * FROM passwords WHERE organization_id=$1;`, [organization_id])
       .then(data => {
         const passwords = data.rows;
         res.json({ passwords });
