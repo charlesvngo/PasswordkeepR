@@ -71,7 +71,9 @@ module.exports = (db) => {
   router.post("/delete", (req, res) => {
 
     // Need to grab the unqiue password id, hardcoded for now
-    const id = 1;
+    console.log("body: ", req.body)
+    const id = req.body.id;
+    console.log("id: ", id)
 
     db.query(`
       DELETE FROM passwords WHERE id=$1

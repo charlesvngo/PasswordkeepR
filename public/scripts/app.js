@@ -63,5 +63,19 @@ $(() => {
             renderPasswordElement(response);
           });
       });
+
+      // Attach handler to add-password button. Handler performs a post request
+      $(".password-delete-button").click(function(event) {
+        const $id = $(this).parent().next();
+        const id = $id.val();
+        const data = {id};
+
+        $.post("/api/passwords/delete", data)
+          .then((response) => {
+            $(".create-password-modal").modal('hide');
+            renderPasswordElement(response);
+          });
+      });
+
     });
 });
