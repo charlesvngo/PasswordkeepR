@@ -41,6 +41,25 @@ module.exports = (db) => {
       });
   });
 
+  router.post("/delete", (req, res) => {
+
+    // Need to grab organization_id from cookie
+    const organization_id = 1;
+
+    db.query(`
+      DELETE FROM passwords WHERE id=$1
+      `, [id])
+      .then(data => {
+        const passwords = data.rows;
+        res.json({ passwords });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
   return router;
 
 };
