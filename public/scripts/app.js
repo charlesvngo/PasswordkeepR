@@ -97,7 +97,7 @@ $(() => {
           })
       });
 
-      $(".save-password-button").submit(function(event){
+      $(".edit-password-form").submit(function(event){
         event.preventDefault();
         const $inputArray = $(":input", this);
         console.log($inputArray);
@@ -105,19 +105,24 @@ $(() => {
         const $category = $inputArray[1];
         const $username = $inputArray[2];
         const $password = $inputArray[3];
+        const $id = $inputArray[11];
 
         const website = $($website).val();
         const category = $($category).val();
         const username = $($username).val();
         const password = $($password).val();
+        const id = $($id).val();
 
-        const data = {website, category, username, password};
 
-        // $.post("/api/passwords/", data)
-        //   .then((response) => {
-        //     $(".create-password-modal").modal('hide');
-        //     renderPasswordElement(response);
-        //   });
+
+        const data = {website, category, username, password, id};
+
+        $.post("/api/passwords/edit", data)
+          .then((response) => {
+            $(".edit-password-modal").modal('hide');
+            renderPasswordElement(response);
+            console.log($(this))
+          });
 
 
       });

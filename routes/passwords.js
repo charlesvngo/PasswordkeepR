@@ -62,15 +62,14 @@ module.exports = (db) => {
     const category = req.body.category;
     const username = req.body.username;
     const password = req.body.password;
+    const id = req.body.id;
     const organization_id = req.cookies.user_id;
-
-    // Need to grab the unqiue password id, hardcoded for now
-    const id = 1;
 
     db.query(`
       UPDATE passwords
       SET website_url=$1, category=$2, username=$3, password=$4, organization_id=$5
-      WHERE id=$6;
+      WHERE id=$6
+      RETURNING *;
       `, [website, category, username, password, organization_id, id])
       .then(data => {
         const passwords = data.rows;
