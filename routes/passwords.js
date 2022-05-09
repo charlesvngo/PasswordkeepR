@@ -22,7 +22,7 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
     const user_id = req.cookies.user_id;
     db.query(
-      `SELECT passwords.id AS id, organizations.id AS organization_id, username, password, website_url
+      `SELECT passwords.id AS id, organizations.id AS organization_id, username, password, website_url, category
       FROM passwords
       JOIN organizations ON organizations.id = passwords.organization_id
       JOIN users ON organizations.id = users.organization_id
@@ -70,14 +70,13 @@ module.exports = (db) => {
     const username = req.body.username;
     const password = req.body.password;
     const id = req.body.id;
-    const organization_id = req.cookies.user_id;
 
     db.query(`
       UPDATE passwords
-      SET website_url=$1, category=$2, username=$3, password=$4, organization_id=$5
-      WHERE id=$6
+      SET website_url=$1, category=$2, username=$3, password=$4
+      WHERE id=$5
       RETURNING *;
-      `, [website, category, username, password, organization_id, id])
+      `, [website, category, username, password, id])
       .then(data => {
         const passwords = data.rows;
         res.json({ passwords });
