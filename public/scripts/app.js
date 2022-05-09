@@ -5,12 +5,6 @@ $(() => {
   $.get("/api/passwords/")
     .then((response) => renderPasswordElement(response))
     .then((response) => {
-      // After the initial load, add the copy to clipboard handler to all cards.
-      $(".button-copy").click(function() {
-        const copyField = $(this).prev().val();
-        $(this).prev().val(copyField).select();
-        document.execCommand("copy");
-      });
 
       // Attach password generation click handler
       $(".button-generate-password").click(function() {
@@ -101,7 +95,6 @@ $(() => {
       $(".edit-password-form").submit(function(event){
         event.preventDefault();
         const $inputArray = $(":input", this);
-        console.log($inputArray);
         const $website = $inputArray[0];
         const $category = $inputArray[1];
         const $username = $inputArray[2];
