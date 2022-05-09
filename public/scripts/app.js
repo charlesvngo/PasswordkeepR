@@ -16,4 +16,10 @@ $(() => {
       // Edit submit form handler
       editPasswordHelper;
     });
+
+  $.get("/api/users/")
+    .then((response) => {
+      const companyName = response.users[0].name;
+      $('.company-name').text(companyName);
+    })
 });

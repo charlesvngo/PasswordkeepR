@@ -10,7 +10,10 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM users;`)
+    const userId = req.cookies.user_id;
+    db.query(`
+      SELECT organizations.name FROM users JOIN organizations ON organizations.id = organization_id WHERE users.id = $1;
+    `, [userId])
       .then(data => {
         const users = data.rows;
         res.json({ users });
