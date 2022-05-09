@@ -24,7 +24,7 @@ const createPasswordElement = function(password) {
       <button type="button" class="password-edit-button btn btn-outline-dark col-lg-2 col-sm-6 mr-1" data-toggle="modal" data-target=".bd-edit-modal-lg"> Edit</button>
       <button type="button" class="password-delete-button btn btn-outline-danger col-lg-2 col-sm-6"><i class="fa-solid fa-trash"></i> Delete</button>
     </div>
-    <input type="hidden" class="password-id" value=${password.id}>
+    <input type="hidden" id="${password.id}" class="password-id" value=${password.id}>
   </div>
 </article>`;
 };

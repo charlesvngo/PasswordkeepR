@@ -58,6 +58,7 @@ $(() => {
           .then((response) => {
             $(".create-password-modal").modal('hide');
             renderPasswordElement(response);
+            $("html").animate({ scrollTop: 0 }, 400);
           });
       });
 
@@ -120,8 +121,9 @@ $(() => {
         $.post("/api/passwords/edit", data)
           .then((response) => {
             $(".edit-password-modal").modal('hide');
+            $(`#${response.passwords[0].id}`).closest("article").remove();
             renderPasswordElement(response);
-            console.log($(this))
+            $("html").animate({ scrollTop: 0 }, 400);
           });
 
 
