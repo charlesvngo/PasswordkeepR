@@ -1,12 +1,10 @@
 -- users table seeds here
 
 INSERT INTO users (name, organization_id)
-VALUES ('Alice', 1),
-('Bob', 1),
-('Cara', 1),
-('Daniel', 2),
-('Eric', 2),
-('Frank', 2),
-('Geoff', 3),
-('Henry', 3),
-('Jeff', 3);
+VALUES ('Bob Vance', 1),
+('WorkerBee', 1),
+('HR Account', 1),
+('Michael Scott', 2),
+('Dwight Schrute', 2),
+('Jim Halpert', 2),
+('Pam Beesly', 2);

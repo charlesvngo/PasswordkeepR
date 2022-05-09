@@ -1,6 +1,7 @@
 
 // Function to create password cards from the database.
 const createPasswordElement = function(password) {
+  console.log(password);
   return `<article class="card p-1 shadow-lg rounded mb-5 mt-3 col-lg-8">
   <div class="card-body">
     <div class="d-flex align-items-center">
