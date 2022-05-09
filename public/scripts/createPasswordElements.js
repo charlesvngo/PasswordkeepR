@@ -1,6 +1,5 @@
 
 // Function to create password cards from the database.
-
 const createPasswordElement = function(password) {
   return `<article class="card p-1 shadow-lg rounded mb-5 mt-3 col-lg-8">
   <div class="card-body">
@@ -41,5 +40,16 @@ const renderPasswordElement = function(response) {
       document.execCommand("copy");
     });
 
+    // Attach handler delete button. Handler performs a post request which deletes
+    $(".password-delete-button", card).click(function(event) {
+      const $id = $(this).parent().next();
+      const id = $id.val();
+      const data = {id};
+
+      $.post("/api/passwords/delete", data)
+        .then((response) => {
+          $(this).closest("article").remove();
+        });
+    });
   }
 };
