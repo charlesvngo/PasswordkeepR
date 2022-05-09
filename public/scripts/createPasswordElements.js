@@ -51,5 +51,28 @@ const renderPasswordElement = function(response) {
           $(this).closest("article").remove();
         });
     });
+
+    $(".password-edit-button", card).click(function(event) {
+      const $id = $(this).parent().next();
+      const id = $id.val();
+      $.get(`/api/passwords/${id}`)
+        .then((result) =>{
+          const passwordObj = result.passwords[0];
+          const id = passwordObj.id
+          const category = passwordObj.category;
+          const username = passwordObj.username;
+          const password = passwordObj.password;
+          const website = passwordObj.website_url;
+
+          $modal = $(this).closest("body").find(".edit-password-modal")
+
+          $modal.find("input").first().val(website);
+          $modal.find("input").filter(".username").val(username);
+          $modal.find("input").filter(".password").val(password);
+          $modal.find("input").filter(".password-id").val(id);
+          $modal.find(":selected").text(category);
+
+        })
+    });
   }
 };
