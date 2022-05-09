@@ -4,8 +4,8 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    const organization_id = req.cookies.user_id;
-    db.query(`SELECT * FROM passwords WHERE organization_id=$1;`, [organization_id])
+    const user_id = req.cookies.user_id;
+    db.query(`SELECT * FROM passwords JOIN organizations ON organizations.id = passwords.organization_id JOIN users ON organizations.id = users.organization_id WHERE users.id=$1;`, [user_id])
       .then(data => {
         const passwords = data.rows;
         res.json({ passwords });
