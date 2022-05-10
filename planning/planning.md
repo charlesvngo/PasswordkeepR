@@ -65,3 +65,14 @@ Your projects must use:
 - A CSS preprocessor such as SASS, Stylus, or PostCSS for styling -- or CSS Custom properties and no CSS preprocessor
 - PostgreSQL and pg (with promises) for DBMS
 - git for version control
+
+
+## Stretch features / Bugs
+- users can only edit passwords they've created
+- Fixing handlers on edit/create password page when using clearbit API
+- Dropdown button to sort passwords by category
+- hiding the passwords by default and showing on click
+- search field to get passwords by name
+- implement a master key to unlock all the passwords on the page
+- Style page differently so it's not so bootstrapy
+- dark mode
