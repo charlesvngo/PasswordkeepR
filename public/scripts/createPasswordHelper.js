@@ -25,6 +25,9 @@ const createPasswordHelper = $(".create-password-form").submit(function(event) {
           $("html").animate({ scrollTop: 0 }, 400);
         });
     })
+});
 
-
+$(".website-input").on("focusout",function(event){
+  const value = $(this).val()
+  $(".website-photo").attr("src", `https://logo.clearbit.com/${value}?size=72`)
 });
