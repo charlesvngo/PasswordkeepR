@@ -5,7 +5,7 @@ const createPasswordElement = function(password) {
   <div class="card-body">
     <div class="d-flex justify-content-between align-items-center mb-2">
       <div class="d-flex align-items-center">
-        <img src="https://logo.clearbit.com/${password.website_url}?size=72"/>
+        <img class="website-image" src="https://logo.clearbit.com/${password.website_url}?"/>
         <h5 class="card-title ml-3">${password.website_url}</h5>
       </div>
       <div class="d-flex align-items-center ml-5">
@@ -29,8 +29,8 @@ const createPasswordElement = function(password) {
         <button type="button" class="password-edit-button btn btn-outline-dark col-lg-6 col-sm-6 mr-1" data-toggle="modal" data-target=".bd-edit-modal-lg"> Edit</button>
         <button type="button" class="password-delete-button btn btn-outline-danger col-lg-6 col-sm-6"><i class="fa-solid fa-trash"></i> Delete</button>
       </div>
+      <input type="hidden" id="${password.id}" class="password-id" value=${password.id}>
     </div>
-    <input type="hidden" id="${password.id}" class="password-id" value=${password.id}>
   </div>
 </article>`;
 };
@@ -62,6 +62,8 @@ const renderPasswordElement = function(response) {
     $(".password-edit-button", card).click(function(event) {
       const $id = $(this).parent().next();
       const id = $id.val();
+
+
       $.get(`/api/passwords/${id}`)
         .then((result) =>{
           const passwordObj = result.passwords[0];
@@ -78,10 +80,11 @@ const renderPasswordElement = function(response) {
           $modal.find("input").filter(".password").val(password);
           $modal.find("input").filter(".password-id").val(id);
           $modal.find(":selected").text(category);
+          $(".website-photo").attr("src", `https://logo.clearbit.com/${website}`)
         })
     });
 
-    $(card).click(function(event) {
+    $(".website-image", card).click(function(event) {
       $(".hidden-content", card).slideToggle();
     })
   }

@@ -27,6 +27,6 @@ const editPasswordHelper = $(".edit-password-form").submit(function(event){
 
 $(".website-input").on("focusout",function(event){
   const value = $(this).val()
-  $(".website-photo").attr("src", `https://logo.clearbit.com/${value}?size=72`)
+  $(".website-photo").attr("src", `https://logo.clearbit.com/${value}`)
 });
 
