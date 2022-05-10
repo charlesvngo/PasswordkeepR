@@ -13,6 +13,7 @@ const createPasswordHelper = $(".create-password-form").submit(function(event) {
   const username = $($username).val();
   const password = $($password).val();
 
+  // Can we add an organization_id?
   const data = {website, category, username, password};
 
   $.post("/api/passwords/", data)

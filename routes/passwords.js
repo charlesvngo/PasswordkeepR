@@ -44,6 +44,8 @@ module.exports = (db) => {
     const username = req.body.username;
     const password = req.body.password;
     console.log("req.body: ", req.body)
+
+    // Need to fix this
     const organization_id = req.cookies.user_id;
 
     db.query(`
