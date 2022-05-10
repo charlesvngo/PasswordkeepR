@@ -12,21 +12,23 @@ const createPasswordElement = function(password) {
         <h6 class="card-subtitle text-muted pb-1">${password.category}</h6>
       </div>
     </div>
-    <div class="form-group row">
-      <div class="col-lg-12 d-flex pt-2">
-        <input type="text" readonly class="form-control-plaintext" value="${password.username}">
-        <button type="button" class="button-copy btn btn-outline-primary d-flex align-items-center"><i class="fa-solid fa-copy mr-2"></i> Copy</button>
+    <div class="hidden-content">
+        <div class="form-group row">
+          <div class="col-lg-12 d-flex pt-2">
+            <input type="text" readonly class="form-control-plaintext" value="${password.username}">
+            <button type="button" class="button-copy btn btn-outline-primary d-flex align-items-center"><i class="fa-solid fa-copy mr-2"></i> Copy</button>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-lg-12 d-flex">
+            <input type="text" readonly class="form-control-plaintext" value="${password.password}">
+            <button type="button" class="button-copy btn btn-outline-primary d-flex align-items-center"><i class="fa-solid fa-copy mr-2"></i> Copy</button>
+        </div>
+        </div>
+      <div class="d-flex justify-content-between">
+        <button type="button" class="password-edit-button btn btn-outline-dark col-lg-6 col-sm-6 mr-1" data-toggle="modal" data-target=".bd-edit-modal-lg"> Edit</button>
+        <button type="button" class="password-delete-button btn btn-outline-danger col-lg-6 col-sm-6"><i class="fa-solid fa-trash"></i> Delete</button>
       </div>
-    </div>
-    <div class="form-group row">
-      <div class="col-lg-12 d-flex">
-        <input type="text" readonly class="form-control-plaintext" value="${password.password}">
-        <button type="button" class="button-copy btn btn-outline-primary d-flex align-items-center"><i class="fa-solid fa-copy mr-2"></i> Copy</button>
-      </div>
-    </div>
-    <div class="d-flex justify-content-between">
-      <button type="button" class="password-edit-button btn btn-outline-dark col-lg-6 col-sm-6 mr-1" data-toggle="modal" data-target=".bd-edit-modal-lg"> Edit</button>
-      <button type="button" class="password-delete-button btn btn-outline-danger col-lg-6 col-sm-6"><i class="fa-solid fa-trash"></i> Delete</button>
     </div>
     <input type="hidden" id="${password.id}" class="password-id" value=${password.id}>
   </div>
@@ -78,6 +80,10 @@ const renderPasswordElement = function(response) {
           $modal.find(":selected").text(category);
         })
     });
+
+    $(card).click(function(event) {
+      $(".hidden-content", card).slideToggle();
+    })
   }
 };
 
