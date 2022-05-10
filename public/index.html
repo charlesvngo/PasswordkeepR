@@ -56,6 +56,26 @@
       </ul>
     </div>
   </nav>
+
+
+
+  <div class="dropdown show">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Sort by category:
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="/api/passwords/">Show All</a>
+      <a class="dropdown-item" href="/api/passwords/categories/email">email</a>
+      <a class="dropdown-item" href="/api/passwords/categories/entertainment">entertainment</a>
+      <a class="dropdown-item" href="/api/passwords/categories/finance">finance</a>
+      <a class="dropdown-item" href="/api/passwords/categories/social">social</a>
+      <a class="dropdown-item" href="/api/passwords/categories/productivity">productivity</a>
+      <a class="dropdown-item" href="/api/passwords/categories/shipping">shipping</a>
+      <a class="dropdown-item" href="/api/passwords/categories/office">office</a>
+    </div>
+  </div>
+
+
   <main class="d-flex container justify-content-center align-items-center flex-column mb-2">
   <!-- user generated cards -->
   </main>
@@ -80,7 +100,7 @@
               <select class="custom-select" id="inputGroupSelect01">
                 <option selected></option>
                 <option value="email">email</option>
-                <option value="etertainment">entertainment</option>
+                <option value="entertainment">entertainment</option>
                 <option value="finance">finance</option>
                 <option value="social">social</option>
                 <option value="productivity">productivity</option>
