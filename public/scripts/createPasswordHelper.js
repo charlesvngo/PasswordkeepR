@@ -13,13 +13,18 @@ const createPasswordHelper = $(".create-password-form").submit(function(event) {
   const username = $($username).val();
   const password = $($password).val();
 
-  // Can we add an organization_id?
-  const data = {website, category, username, password};
-
-  $.post("/api/passwords/", data)
+  $.get("/api/organizations")
     .then((response) => {
-      $(".create-password-modal").modal('hide');
-      renderPasswordElement(response);
-      $("html").animate({ scrollTop: 0 }, 400);
-    });
+      const organization_id = response.organization_id[0].id;
+      const data = {website, category, username, password, organization_id};
+
+      $.post("/api/passwords/", data)
+        .then((response) => {
+          $(".create-password-modal").modal('hide');
+          renderPasswordElement(response);
+          $("html").animate({ scrollTop: 0 }, 400);
+        });
+    })
+
+
 });

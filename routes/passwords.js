@@ -46,7 +46,7 @@ module.exports = (db) => {
     console.log("req.body: ", req.body)
 
     // Need to fix this
-    const organization_id = req.cookies.user_id;
+    const organization_id = req.body.organization_id;
 
     db.query(`
       INSERT INTO passwords (organization_id, website_url, category, username, password)
