@@ -50,3 +50,9 @@ body {
   cursor: pointer;
   max-height: 3em;
 }
+
+@media (min-width: 576px){
+  .form-inline .form-control {
+    width: 25em;
+  }
+}
