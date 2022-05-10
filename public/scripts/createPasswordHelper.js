@@ -13,6 +13,10 @@ const createPasswordHelper = $(".create-password-form").submit(function(event) {
   const username = $($username).val();
   const password = $($password).val();
 
+  if(!website || !username || !password) {
+    return alert("Please make sure all fields are filled in!");
+  }
+
   $.get("/api/organizations")
     .then((response) => {
       const organization_id = response.organization_id[0].id;
