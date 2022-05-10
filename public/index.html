@@ -71,34 +71,41 @@
     <div class="modal-dialog modal-lg modal-content">
       <form class="create-password-form p-3 mt-2" action="/api/passwords/" method="POST">
           <h4 class="ml-3 mb-4">Create New Password</h4>
-          <div class="d-flex form-group col-lg-6">
-            <input type="website" class="form-control" aria-describedby="websiteHelp" placeholder="Website">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">Category</label>
+          <div class="d-flex flex-row">
+            <div class="input-container">
+              <div class="d-flex form-group col-lg-12">
+                <input type="website" class="website-input form-control" aria-describedby="websiteHelp" placeholder="Website">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                  </div>
+                  <select class="custom-select" id="inputGroupSelect01">
+                    <option selected></option>
+                    <option value="email">email</option>
+                    <option value="etertainment">entertainment</option>
+                    <option value="finance">finance</option>
+                    <option value="social">social</option>
+                    <option value="productivity">productivity</option>
+                    <option value="shipping">shipping</option>
+                    <option value="office">office</option>
+                  </select>
+                </div>
               </div>
-              <select class="custom-select" id="inputGroupSelect01">
-                <option selected></option>
-                <option value="email">email</option>
-                <option value="etertainment">entertainment</option>
-                <option value="finance">finance</option>
-                <option value="social">social</option>
-                <option value="productivity">productivity</option>
-                <option value="shipping">shipping</option>
-                <option value="office">office</option>
-              </select>
+              <div class="form-group col-lg-12">
+                <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Username">
+              </div>
+              <div class="password-wrapper form-group col-lg-12">
+                <input class="password-input" type="text" class="form-control" placeholder="Password">
+              </div>
             </div>
-          </div>
-          <div class="form-group col-lg-6">
-            <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Username">
-          </div>
-          <div class="form-group col-lg-6">
-            <input type="text" class="form-control" placeholder="Password">
+            <div class="d-flex justify-content-center align-items-center mr-auto ml-auto">
+              <img class="website-photo" src="img/shield-b&w-01.png"/>
+            </div>
           </div>
           <button type="button" class="button-generate-password btn btn-dark d-flex align-items-center ml-3">Generate Password</button>
           <div class="d-flex align-items-center mt-3 password-options">
             <span class="input-group-sm ml-3 mr-1">Length</span>
-            <input class="length-input pl-2" type="number" class="pl-2" min="3" value="8">
+            <input type="number" class="pl-2" min="3" value="8">
             <div class="form-check ml-3">
               <input type="checkbox" class="form-check-input" checked>
               <label class="form-check-label" for="exampleCheck1">Lowercase</label>
@@ -128,27 +135,34 @@
     <div class="modal-dialog modal-lg modal-content">
         <form class="edit-password-form p-3 mt-2" action="/api/passwords/edit" method="POST">
           <h4 class="ml-3 mb-4">Edit Password</h4>
-          <div class="d-flex form-group col-lg-6">
-            <input type="website" class="form-control" id="exampleInputWebsite" aria-describedby="websiteHelp" placeholder="Website">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">Category</label>
+          <div class="d-flex flex-row">
+            <div class="input-container">
+              <div class="d-flex form-group col-lg-12">
+                <input type="website" class="form-control website-input" id="exampleInputWebsite" aria-describedby="websiteHelp" placeholder="Website">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                  </div>
+                  <select class="custom-select" id="inputGroupSelect01">
+                    <option selected></option>
+                    <option value="Email">Email</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Social">Social</option>
+                    <option value="Productivity">Productivity</option>
+                  </select>
+                </div>
               </div>
-              <select class="custom-select" id="inputGroupSelect01">
-                <option selected></option>
-                <option value="Email">Email</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Finance">Finance</option>
-                <option value="Social">Social</option>
-                <option value="Productivity">Productivity</option>
-              </select>
+              <div class="form-group col-lg-6">
+                <input type="username" class="username form-control" placeholder="Username">
+              </div>
+              <div class="form-group col-lg-6">
+                <input type="text" class="password form-control" placeholder="Password">
+              </div>
             </div>
-          </div>
-          <div class="form-group col-lg-6">
-            <input type="username" class="username form-control" placeholder="Username">
-          </div>
-          <div class="form-group col-lg-6">
-            <input type="text" class="password form-control" placeholder="Password">
+            <div class="d-flex justify-content-center align-items-center mr-auto ml-auto">
+              <img class="website-photo" src="img/shield-b&w-01.png"/>
+            </div>
           </div>
           <button type="button" class="button-generate-password btn btn-dark d-flex align-items-center ml-3">Generate Password</button>
           <div class="d-flex align-items-center mt-3 password-options">
