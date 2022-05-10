@@ -22,4 +22,22 @@ $(() => {
       const companyName = response.users[0].name;
       $('.company-name').text(companyName);
     })
+
+  $(".sort-by").click((event) => {
+    event.preventDefault();
+    let category = $(event.target).text()
+    $("main").empty();
+
+    if (category === "Show All") {
+      $.get(`/api/passwords/`)
+        .then((response) => {
+          renderPasswordElement(response);
+        });
+    } else {
+      $.get(`/api/passwords/categories/${category}`)
+        .then((response) => {
+          renderPasswordElement(response);
+        });
+    }
+  });
 });
