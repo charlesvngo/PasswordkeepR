@@ -17,11 +17,14 @@ const generatePasswordHandler = $(".button-generate-password").click(function() 
   const num = $num.is(':checked');
 
   // From the DOM location of the num, check if symbol is true
-  const $symbol = $($num).parent().next().children("input");
+  const $symbol = $($num);
   const symbol = $symbol.is(':checked');
 
-  const $inputField = $(this).prev().children("input");
-  $inputField.val(generatePassword(length, lowerCase, upperCase, num, symbol));
+  const $createPasswordForm = $(this).parent().children()[1];
+  const $inputContainer = $($createPasswordForm).children().closest(".input-container").children()[2];
+  const $passwordInput = $($inputContainer).children()
+
+  $passwordInput.val(generatePassword(length, lowerCase, upperCase, num, symbol));
 });
 
 

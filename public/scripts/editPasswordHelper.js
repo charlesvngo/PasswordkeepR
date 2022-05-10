@@ -14,8 +14,6 @@ const editPasswordHelper = $(".edit-password-form").submit(function(event){
   const password = $($password).val();
   const id = $($id).val();
 
-
-
   const data = {website, category, username, password, id};
 
   $.post("/api/passwords/edit", data)
@@ -26,3 +24,9 @@ const editPasswordHelper = $(".edit-password-form").submit(function(event){
       $("html").animate({ scrollTop: 0 }, 400);
     });
 });
+
+$(".website-input").on("focusout",function(event){
+  const value = $(this).val()
+  $(".website-photo").attr("src", `https://logo.clearbit.com/${value}?size=72`)
+});
+
