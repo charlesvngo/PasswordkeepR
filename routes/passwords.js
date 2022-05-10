@@ -4,6 +4,29 @@ const router  = express.Router();
 
 module.exports = (db) => {
 
+  router.get("/search/:id", (req, res) => {
+    const user_id = req.cookies.user_id;
+    const searchItem = req.params.id + '%';
+    console.log(searchItem);
+
+    db.query(
+      `SELECT passwords.id AS id, organizations.id AS organization_id, username, password, website_url, category
+      FROM passwords
+      JOIN organizations ON organizations.id = passwords.organization_id
+      JOIN users ON organizations.id = users.organization_id
+      WHERE users.id=$1 AND website_url LIKE $2;`, [user_id, searchItem])
+      .then(data => {
+        const passwords = data.rows;
+        res.json({ passwords });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
+
   router.get("/categories/:id", (req, res) => {
     const user_id = req.cookies.user_id;
     const category_id = req.params.id;

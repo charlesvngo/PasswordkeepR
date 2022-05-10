@@ -40,4 +40,22 @@ $(() => {
         });
     }
   });
+
+  $(".search-form").keyup((event) => {
+    const searchItem = $(event.target).val();
+    $("main").empty();
+
+    if (!searchItem) {
+      $.get(`/api/passwords/`)
+      .then((response) => {
+        renderPasswordElement(response);
+      });
+    } else {
+      $.get(`/api/passwords/search/${searchItem}`)
+        .then((response) => {
+        renderPasswordElement(response);
+      });
+    }
+  })
+
 });
