@@ -30,19 +30,23 @@ $(() => {
   $(".sort-by").click((event) => {
     event.preventDefault();
     let category = $(event.target).text();
-    $("main").empty();
+    $("main").fadeToggle(400, "swing", function(event) {
+      $(this).empty();
+      if (category === "Show All") {
+        $.get(`/api/passwords/`)
+          .then((response) => {
+            renderPasswordElement(response);
+            $(this).fadeToggle(400, "swing");
+          });
+      } else {
+        $.get(`/api/passwords/categories/${category}`)
+          .then((response) => {
+            renderPasswordElement(response);
+            $(this).fadeToggle(400, "swing");
+          });
+      }
+    });
 
-    if (category === "Show All") {
-      $.get(`/api/passwords/`)
-        .then((response) => {
-          renderPasswordElement(response);
-        });
-    } else {
-      $.get(`/api/passwords/categories/${category}`)
-        .then((response) => {
-          renderPasswordElement(response);
-        });
-    }
   });
 
   $(".search-form").keyup((event) => {
