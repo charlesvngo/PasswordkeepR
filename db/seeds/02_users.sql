@@ -1,7 +1,7 @@
 -- users table seeds here
 
 INSERT INTO users (name, organization_id, profile_picture)
-VALUES ('Michael Scott', 1, 'https://pbs.twimg.com/profile_images/1234183399193161728/HgBi7HhO_400x400.jpg'),
+VALUES ('Michael Scott', 1, 'https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/MichaelScott.png/220px-MichaelScott.png'),
 ('Dwight Schrute', 1, 'https://pbs.twimg.com/profile_images/1212841876895813632/4mzarqqS_400x400.jpg'),
 ('Jim Halpert', 1, 'https://pbs.twimg.com/profile_images/3171824697/ef75d90df2e65ce326acf30262df5918_400x400.jpeg'),
 ('Michael Scott', 2, 'https://pbs.twimg.com/profile_images/1234183399193161728/HgBi7HhO_400x400.jpg'),
