@@ -1,16 +1,23 @@
+
+
+$header-color: #22181C;
+$background-color: #DFEDF6;
+$button-color: #F13030;
+$highlight-color: #5A0001;
+$secondary-color: #F45B69;
+
+nav {
+  background-color: $header-color;
+  color: white;
+}
+
 body {
   min-height: 100vh;
+  background: $background-color;
+}
 
-  background: rgb(163, 208, 219);
-  background: linear-gradient(
-    227deg,
-    rgba(163, 208, 219, 1) 0%,
-    rgba(163, 176, 219, 1) 20%,
-    rgba(163, 173, 219, 1) 34%,
-    rgba(163, 219, 208, 1) 59%,
-    rgba(163, 208, 219, 1) 74%,
-    rgba(163, 208, 219, 1) 100%
-  );
+.primary-color {
+  background-color: $button-color;
 }
 
 .username-field {

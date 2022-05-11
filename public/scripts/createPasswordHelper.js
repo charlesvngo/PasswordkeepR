@@ -27,6 +27,11 @@ const createPasswordHelper = $(".create-password-form").submit(function(event) {
           $(".create-password-modal").modal('hide');
           renderPasswordElement(response);
           $("html").animate({ scrollTop: 0 }, 400);
+          $($website).val("");
+          $($category).val("");
+          $($username).val("");
+          $($password).val("");
+          $(".website-photo").attr("src", `img/shield-b&w-01.png`);
         });
     })
 });

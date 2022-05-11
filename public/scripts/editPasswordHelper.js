@@ -1,5 +1,5 @@
 // Edit submit form handler
-const editPasswordHelper = $(".edit-password-form").submit(function(event){
+const editPasswordHelper = $(".edit-password-form").submit(function(event) {
   event.preventDefault();
   const $inputArray = $(":input", this);
   const $website = $inputArray[0];
@@ -25,7 +25,7 @@ const editPasswordHelper = $(".edit-password-form").submit(function(event){
     });
 });
 
-$(".website-input").on("focusout",function(event){
+$(".website-input").on("focusout",function(event) {
   const value = $(this).val()
   $(".website-photo").attr("src", `https://logo.clearbit.com/${value}`)
 });

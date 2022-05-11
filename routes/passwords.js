@@ -1,5 +1,4 @@
 const express = require('express');
-const { cookie } = require('request');
 const router  = express.Router();
 
 module.exports = (db) => {
@@ -7,7 +6,6 @@ module.exports = (db) => {
   router.get("/search/:id", (req, res) => {
     const user_id = req.cookies.user_id;
     const searchItem = req.params.id + '%';
-    console.log(searchItem);
 
     db.query(
       `SELECT passwords.id AS id, organizations.id AS organization_id, username, password, website_url, category

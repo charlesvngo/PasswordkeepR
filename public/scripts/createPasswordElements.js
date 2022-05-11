@@ -38,7 +38,7 @@ const createPasswordElement = function(password) {
 const renderPasswordElement = function(response) {
   for (const password of response.passwords) {
     const main = $("main").prepend(createPasswordElement(password));
-    const card = $(main).children(":first-child")
+    const card = $(main).children(":first-child");
 
     // Attach copy to clipboard to button on card creation
     $(".button-copy", card).click(function() {
