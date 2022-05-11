@@ -17,7 +17,7 @@ const generatePasswordHandler = $(".button-generate-password").click(function() 
   const num = $num.is(':checked');
 
   // From the DOM location of the num, check if symbol is true
-  const $symbol = $($num);
+  const $symbol = $($num).parent().next().children("input");
   const symbol = $symbol.is(':checked');
 
   const $createPasswordForm = $(this).parent().children()[1];
