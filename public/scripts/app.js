@@ -20,12 +20,16 @@ $(() => {
   $.get("/api/users/")
     .then((response) => {
       const companyName = response.users[0].name;
-      $('.company-name').text(companyName);
+      const username = response.users[0].username;
+
+      const $companyName = $('.company-name').text(companyName);
+      $companyName.next().find("img").replaceWith(`<img src="${response.users[0].profile_picture}" alt="mdo" width="32" height="32" class="rounded-circle"></img>`);
+      $companyName.next().find(".dropdown-menu").prepend(`<a class="dropdown-item">${username}</a>`);
     })
 
   $(".sort-by").click((event) => {
     event.preventDefault();
-    let category = $(event.target).text()
+    let category = $(event.target).text();
     $("main").empty();
 
     if (category === "Show All") {
