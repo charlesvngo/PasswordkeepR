@@ -22,7 +22,7 @@ const generatePasswordHandler = $(".button-generate-password").click(function() 
 
   const $createPasswordForm = $(this).parent().children()[1];
   const $inputContainer = $($createPasswordForm).children().closest(".input-container").children()[2];
-  const $passwordInput = $($inputContainer).children()
+  const $passwordInput = $($inputContainer).children();
 
   $passwordInput.val(generatePassword(length, lowerCase, upperCase, num, symbol));
 });
